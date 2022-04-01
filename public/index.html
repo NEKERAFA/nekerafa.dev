@@ -1,31 +1,53 @@
 <!DOCTYPE HTML>
-<html lang="es">
+<html lang="es" data-theme="light">
     <head>
-        <meta charset="UTF-8">
         <title>nekerafa.dev</title>
+
+        <meta charset="UTF-8">
         <meta name="author" content="Rafael Alcalde Azpiazu">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
-        <header>
-            <h1>hello world!</h1>
+        <header class="container-fluid page-header">
+            <nav>
+                <ul>
+                    <li>
+                        <hgroup>
+                            <h1><a href="/index.html">hello world!</a></h1>
+                            <h2>Rafael Alcalde Azpiazu's personal blog: programming, tinkering and having fun 😺</h2>
+                        </hgroup>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a href="/tutorials.html">tutorials</a></li>
+                    <li><a href="/about.html">about</a></li>
+                </ul>
+            </nav>
         </header>
-        <nav>
-            <a href="/index.html">home</a>
-            <a href="/about.html">about</a>
-        </nav>
-        <main>
-            <h2>hello world</h2>
 
+        <main class="container">
+            <section>
+
+            <h3>¡Hola mundo!</h3>
+
+            <p>¡Buenas a todes! 😼</p>
+
+            </section>
         </main>
-        <footer>
-            <p>The content on this web is licensed under <a href="https://creativecommons.org/licenses/by/4.0">Creative Commons Attribution 4.0 (CC BY 4.0) <i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i></a></p>
-            <p>See more information on <a href="legal.html">legal</a> page</p>
-            
-            <p>Generated with <a href="http://leafo.net/sitegen">Sitegen</a></p>
+
+        <footer class="container">
+            <small>
+                <p>The content on this web is licensed under <a ref="external" href="https://creativecommons.org/licenses/by/4.0" target="_blank">Creative Commons Attribution 4.0 (CC BY 4.0) <i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i></a></p>
+                
+                <p>See more information on <a ref="license" href="/legal.html">legal</a> page</p>
+                
+                <p>Generated with <a ref="external" href="http://leafo.net/sitegen" target="_blank">Sitegen</a></p>
+            </small>
         </footer>
     </body>
 </html>
