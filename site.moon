@@ -13,4 +13,4 @@ Generated with <a ref="external" href="http://leafo.net/sitegen" target="_blank"
     add 'pages/about.md', target: 'about'
     add 'pages/legal.md', template: 'legal', target: 'legal'
 
-    add 'pages/posts/hola_mundo.md', template: 'post', target: 'posts/hola_mundo'
+    add 'pages/posts/hola_mundo.md', target: 'posts/hola_mundo'
