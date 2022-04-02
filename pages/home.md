@@ -1,6 +1,6 @@
 <section>
 
-### <a href="post/hola_mundo.html">¡Hola mundo!</a>
+### <a href="posts/hola_mundo.html">¡Hola mundo!</a>
 ###### <i class="fa-solid fa-calendar-day"></i> 2 abril 2022
 
 ¡Buenas a todes! 😼
