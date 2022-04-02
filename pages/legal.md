@@ -4,7 +4,8 @@ The code exposed in the examples of this website is licensed under <a ref="exter
 
 ### Libraries and third parties
 
-- <a ref="external" href="https://github.com/FortAwesome/Font-Awesome" target="_blank">Font Awesome Fonts (SIL OFL 1.1 - Font Awesome Team)</a>
+- <a href="external" href>
 - <a ref="external" href="http://leafo.net/sitegen" target="_blank">Sitegen (MIT - Leaf Corcoran)</a>
 - <a ref="external" href="https://picocss.com" target="_blank">Pico.css (MIT - Lucas Larroche)</a>
+- <a ref="external" href="https://github.com/FortAwesome/Font-Awesome" target="_blank">Font Awesome Fonts (SIL OFL 1.1 - Font Awesome Team)</a>
 - <a ref="external" href="https://design.ubuntu.com/font" target="_blank">Ubuntu Font (Ubtuntu font licence - Canonical Ltd.)</a>

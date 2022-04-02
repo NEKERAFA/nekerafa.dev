@@ -17,11 +17,29 @@ a {
     color: #64BA54;
 }
 
-section>h1, section>h2, section>h3, section>h4, section>h5, section>h6 {
+.userful-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.userful-links div {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.userful-links div a {
+    padding: 0.25em;
+}
+
+main h1, main h2, main h3, main h4, main h5, main h6 {
     font-weight: 400;
 }
 
-section>p {
+main p {
     font-size: 17px;
 }
 
