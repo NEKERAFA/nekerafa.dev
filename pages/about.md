@@ -1,4 +1,4 @@
-### Sobre mí
+# Sobre mí
 
 ¡Buenas! Soy Rafael Alcalde Azpiazu (mi nick es NEKERAFA), nací el 17 de marzo de 1996, y vivo actualmente en A Coruña (España). En la actualidad soy ingeniero informático (estudié ingeniería informática en la Universidade Da Coruña) y trabajo como Full-Stack con tecnologías web.
 
