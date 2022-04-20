@@ -1,5 +1,6 @@
 sitegen = require 'sitegen'
 lfs = require 'lfs'
+date = require 'date'
 
 import extract_header from require 'sitegen.header'
 
@@ -21,12 +22,14 @@ sitegen.create =>
             header.path = "posts/#{name}.html"
             table.insert @posts, header
 
-    --add 'pages/home.md', target: 'index'
+    date_cmp = (post_a, post_b) ->
+        (date.diff post_a.date, post_b.date)\spandays()
+
+    table.sort @posts, date_cmp
+
     add 'pages/home.moon', target: 'index'
     add 'pages/404.md', target: '404'
     add 'pages/about.md', target: 'about'
     add 'pages/legal.md', template: 'legal', target: 'legal'
-
-    --add 'pages/posts/hola_mundo.moon', target: 'posts/hola_mundo'
 
     blog_feed {}, "feeds/example.xml"

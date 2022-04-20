@@ -1,6 +1,6 @@
 {
     title: "¡Hola mundo!"
-    date: "2 de abril de 2022"
+    date: "2 april 2022"
     is_a: "blog_post"
     tags: { "post" }
     description: [[¡Buenas a todes! 😼
@@ -10,8 +10,8 @@ Saludos y nos vemos pronto.]]
 }
 
 html ->
-    tags = [span { class: "badge rounded-pill tag", tag} for tag in *@tags]
-    desc = [p line for line in string.gmatch @description, '[^\n]+']
+    tags = [ span { class: 'badge rounded-pill tag', tag } for tag in *@tags ]
+    desc = [ p line for line in string.gmatch @description, '[^\n]+' ]
 
     {
         h1 "#{@title}"

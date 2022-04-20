@@ -1,8 +1,3 @@
-{
-    title: "home",
-    id: "home"
-}
-
 html ->
     content = {}
 
@@ -12,6 +7,9 @@ html ->
             i { class: 'fa-solid fa-calendar-day' },
             post.date
         }
+
+        tags = [span { class: 'badge rounded-pill tag', tag } for tag in *post.tags]
+        table.insert content, p tags
 
         for line in string.gmatch post.description, '[^\n]+'
             table.insert content, p line
