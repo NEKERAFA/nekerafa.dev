@@ -11,7 +11,10 @@ Saludos y nos vemos pronto.]]
 
 html ->
     tags = [ span { class: 'badge rounded-pill tag', tag } for tag in *@tags ]
-    desc = [ p line for line in string.gmatch @description, '[^\n]+' ]
+    desc = {}
+    for line in string.gmatch @description, '[^\n]+'
+        continue if line == '<!--more-->'
+        table.insert desc, p line
 
     {
         h1 "#{@title}"
@@ -19,6 +22,6 @@ html ->
             i { class: 'fa-solid fa-calendar-day' }
             "#{@date}"
         }
-        unpack tags
+        p tags
         unpack desc
     }

@@ -11,8 +11,14 @@ html ->
         tags = [span { class: 'badge rounded-pill tag', tag } for tag in *post.tags]
         table.insert content, p tags
 
+        more_flag = false
         for line in string.gmatch post.description, '[^\n]+'
-            table.insert content, p line
+            continue if more_flag
+            if line == '<!--more-->'
+                more_flag = true
+                table.insert content, p a { href: post.path, 'Show more...' }
+            else
+                table.insert content, p line
 
         table.insert content, hr
 
