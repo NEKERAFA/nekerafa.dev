@@ -23,7 +23,7 @@ sitegen.create =>
             table.insert @posts, header
 
     date_cmp = (post_a, post_b) ->
-        (date.diff post_b.date, post_a.date)\spandays()
+        - ((date.diff post_a.date, post_b.date)\spandays())
 
     table.sort @posts, date_cmp
 
