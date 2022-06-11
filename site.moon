@@ -22,8 +22,17 @@ sitegen.create =>
             header.path = "posts/#{name}.html"
             table.insert @posts, header
 
+    str_conv = '(%d+) (%l+) (%d+)$'
+    month_conv = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, august: 8, september: 9, october: 10, november: 11, december: 12 }
+
+    get_timestamp = (date) ->
+        day, month, year = string.match date, str_conv
+        os.time {month: month_conv[month], :day, :year}
+
     date_cmp = (post_a, post_b) ->
-        (date.diff post_a.date, post_b.date)\spandays()
+        date_a = get_timestamp post_a.date
+        date_b = get_timestamp post_b.date
+        os.difftime date_a, date_b
 
     table.sort @posts, date_cmp
 
