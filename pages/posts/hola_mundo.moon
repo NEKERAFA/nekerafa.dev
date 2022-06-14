@@ -1,4 +1,5 @@
 {
+    id: 1
     title: "¡Hola mundo!"
     date: "2 april 2022"
     is_a: "blog_post"
@@ -9,19 +10,9 @@ Además, también usaré esta web para subir tutoriales míos, como dev blog de 
 Saludos y nos vemos pronto.]]
 }
 
-html ->
-    tags = [ span { class: 'badge rounded-pill tag', tag } for tag in *@tags ]
-    desc = {}
-    for line in string.gmatch @description, '[^\n]+'
-        continue if line == '<!--more-->'
-        table.insert desc, p line
+post = require "utils.post"
 
-    {
-        h1 "#{@title}"
-        h2 {
-            i { class: 'fa-solid fa-calendar-day' }
-            "#{@date}"
-        }
-        p tags
-        unpack desc
-    }
+write post.get_title @title
+write post.get_date @date
+write post.get_tags @tags
+write post.get_content @description
