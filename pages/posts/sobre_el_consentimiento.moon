@@ -3,7 +3,7 @@
     title: "Sobre el consentimiento"
     date: "21 april 2022"
     is_a: "blog_post"
-    tags: { "post", "opinión" }
+    tags: { "post", "opinión", "castellano" }
     description: [[Y otra vez el debate de marras. De nuevo porque un influencer usa su espacio para mostrar un comportamiento tóxico a nuevas generaciones.
 Siempre que salen este tipo de cosas me pregunto cuándo será el día que, como sociedad, dejemos todes este tipo de mentalidad tóxica apartada o erradicada. Porque sí, uno se cansa de ver cada dos por tres este tipo de peleas en las redes sociales. Sobre todo porque ciertos personajes usan estas peleas para trollear, o causar daño, y, aunque sean una minoría, hacen demasiado ruido y te encuentras con mucho hate y opiniones muy erradas.
 <!-- more -->
