@@ -29,4 +29,13 @@ get_content = (description, path, summary=false) ->
     
     content
 
-{ :get_title, :get_date, :get_tags, :get_content }
+get_post = (post) ->
+    content = ""
+    content ..= (get_title post.title, post.path) .. "\n"
+    content ..= (get_date post.date) .. "\n"
+    content ..= (get_tags post.tags) .. "\n"
+    content ..= get_content post.description, post.path, post.summary
+
+    content
+
+{ :get_title, :get_date, :get_tags, :get_content, :get_post }

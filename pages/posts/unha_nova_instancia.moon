@@ -11,8 +11,4 @@ Os espero ver a todes alí, ata máis ver!!]]
 }
 
 post = require "utils.post"
-
-write post.get_title @title
-write post.get_date @date
-write post.get_tags @tags
-write post.get_content @description
+write post.get_post { title: @title, date: @date, tags: @tags, description: @description }
