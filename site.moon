@@ -1,35 +1,32 @@
-sitegen = require 'sitegen'
 lfs = require 'lfs'
-date = require 'date'
+sitegen = require 'sitegen'
+tools = require 'sitegen.tools'
 
-import extract_header from require 'sitegen.header'
+sass = tools.system_command "sass %s %s", "css"
+
+date_regex = '%d%d%d%d%-%d%d%-%d%d'
+name_regex = '[%w_]'
+post_regex = "^#{date_regex}%-(#{name_regex}+).md$"
 
 sitegen.create =>
-    @title = 'Rafael Alcalde Azpiazu'
+    @title = 'nekerafa.dev'
+    @author = 'Rafa Alcalde Azpiazu'
     @url = 'https://nekerafa.dev'
-    @description = 'Blog personal de Rafael Alcalde Azpiazu'
-    @posts = {}
+    @description = 'Blog personal de Rafa Alcalde Azpiazu'
+    @twitter = "@nekerafa_dev"
+    @lang = "es"
+
+    build sass, "styles.sass", "styles.css"
 
     for item in lfs.dir 'pages/posts'
         if item != '.' and item != '..'
-            name = string.match item, '^(.+)%.moon$'
+            name = item\match post_regex
             path = "pages/posts/#{item}"
             add path, target: "posts/#{name}"
 
-            fd = io.open path, 'r+'
-            site = fd\read '*a'
-            _, header = extract_header site
-            header.path = "posts/#{name}.html"
-            table.insert @posts, header
-
-    post_cmp = (post_a, post_b) ->
-        post_a.id > post_b.id
-
-    table.sort @posts, post_cmp
-
-    add 'pages/home.moon', target: 'index'
+    add 'pages/home.html', target: 'index'
     add 'pages/404.md', target: '404'
     add 'pages/about.md', target: 'about'
-    add 'pages/legal.md', template: 'legal', target: 'legal'
+    add 'pages/legal.md', target: 'legal'
 
-    blog_feed {}, "feeds/example.xml"
+    blog_feed {}

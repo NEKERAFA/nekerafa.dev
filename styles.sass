@@ -1,0 +1,124 @@
+/* Green Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"])
+    --primary: #43a047
+    --primary-hover: #388e3c
+    --primary-focus: rgba(67, 160, 71, 0.125)
+    --primary-inverse: #FFF
+
+/* Green Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark)
+    :root:not([data-theme="light"])
+        --primary: #43a047
+        --primary-hover: #4caf50
+        --primary-focus: rgba(67, 160, 71, 0.25)
+        --primary-inverse: #FFF
+
+/* Green Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark)
+    :root:not([data-theme="light"])
+        --primary: #43a047
+        --primary-hover: #4caf50
+        --primary-focus: rgba(67, 160, 71, 0.25)
+        --primary-inverse: #FFF
+
+/* Green (Common styles) */
+:root
+  --form-element-active-border-color: var(--primary)
+  --form-element-focus-color: var(--primary-focus)
+  --switch-color: var(--primary-inverse)
+  --switch-checked-background-color: var(--primary)
+  --font-family: 'Ubuntu', sans-serif
+  --font-size: 14pt
+
+.page-header
+    padding-top: 1em
+    padding-bottom: 1em
+    background-color: #f8fff4
+
+    hgroup
+        h1
+            font-family: 'Comfortaa', sans-serif
+            font-size: 30pt
+            margin-bottom: 0.125em
+
+        h2
+            font-size: 14pt
+            font-weight: 400
+
+@media (max-width: 768px)
+    .page-header nav
+        flex-wrap: wrap
+
+        hgroup
+            margin: 0
+
+        .avatar
+            display: none
+
+.userful-links
+    padding: 0.25em 1em
+    margin: 1em 0 1.5em 0
+    display: flex
+    justify-content: space-around
+
+main
+    h1
+        font-family: 'Comfortaa', sans-serif
+        font-size: 24pt
+        margin-bottom: 1em
+
+    h2
+        font-size: 14pt
+        font-weight: 500
+        margin-bottom: 1em
+
+        span
+            margin-right: 0.5em
+
+    hr
+        border-top: 2pt dashed #f0f0f0
+
+    article
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin: 0
+        padding: 2em 1em
+        border-radius: 0
+        box-shadow: none
+
+        h1, h2
+            margin: 0
+
+@media (max-width: 768px)
+    main
+        h1, h2
+            margin-bottom: 0.5em
+
+        article
+            display: block
+            padding: 1em 0
+
+            h1
+                font-size: 18pt
+
+            h2
+                font-size: 12pt
+
+.tag
+    background-color: #64BA54
+    color: #fff
+    margin-right: 0.5em
+    margin-bottom: 1em
+    padding: 0.25em 0.75em
+    border-radius: 1em
+    font-size: 12pt
+    font-weight: 500
+
+footer p
+    font-size: 11pt
+    margin-bottom: 1em

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "./build.sh",
+    "clean": "rm -rf www",
+    "start": "firebase serve"
+  },
+  "dependencies": {
+    "sass": "^1.67.0"
+  }
+}

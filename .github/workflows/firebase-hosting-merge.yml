@@ -15,18 +15,22 @@ jobs:
       # Add any build steps here. For example:
       # - run: npm ci && npm run build
 
-      - uses: leafo/gh-actions-lua@v9
+      - uses: leafo/gh-actions-lua@v10
         with:
           luaVersion: "5.1.5"
 
-      - uses: leafo/gh-actions-luarocks@v4
+      - uses: leafo/gh-actions-luarocks@v4.3.0
+    
+      # Install sass
+      - name: Installing sass
+        run: npm install
 
       # Install sitegen package
       - name: Installing sitegen
         run: luarocks install sitegen
 
       - name: Building website
-        run: ./build.sh
+        run: npm run build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
