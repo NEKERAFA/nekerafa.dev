@@ -1,7 +1,7 @@
 {
     title: "Legal information"
     is_a: "legal"
-    description: "The content on nekerafa.dev is licensed under Creative Commons Attribution 4.0 (CC BY 4.0). The code exposed in the examples of this website is licensed under MIT. In addition, the source code of this website is under license GPLv3."
+    meta_description: "Legal information: The content on nekerafa.dev is licensed under Creative Commons Attribution 4.0 (CC BY 4.0). The code exposed in the examples of this website is licensed under MIT. In addition, the source code of this website is under license GPLv3."
 }
 
 The content on this web is licensed under <a ref="external" href="https://creativecommons.org/licenses/by/4.0" target="_blank">Creative Commons Attribution 4.0 (CC BY 4.0) <i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i></a>.

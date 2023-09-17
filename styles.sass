@@ -34,6 +34,10 @@
   --font-family: 'Ubuntu', sans-serif
   --font-size: 14pt
 
+body
+    width: 100vw
+    overflow-x: none
+
 .page-header
     padding-top: 1em
     padding-bottom: 1em
@@ -49,6 +53,14 @@
             font-size: 14pt
             font-weight: 400
 
+.userful-links
+    display: flex
+    justify-content: space-around
+    padding: 0.25em 1em
+    margin-top: 1em
+    margin-bottom: 1.5em
+
+
 @media (max-width: 768px)
     .page-header nav
         flex-wrap: wrap
@@ -59,11 +71,8 @@
         .avatar
             display: none
 
-.userful-links
-    padding: 0.25em 1em
-    margin: 1em 0 1.5em 0
-    display: flex
-    justify-content: space-around
+    .userful-links
+        margin-bottom: 1em
 
 main
     h1

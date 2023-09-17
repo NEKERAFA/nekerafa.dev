@@ -4,17 +4,34 @@
 <title>$title</title>
 
 <meta charset="UTF-8">
-<meta name="description" content="$description">
+<meta name="description" content="$meta_description">
 <meta name="author" content="$author">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="$twitter">
+<meta name="twitter:title" content="$title">
+<meta name="twitter:description" content="$meta_description">
+$neq{$is_a, "blog_post"}[[<meta property="og:type" content="website">]]
+<meta property="og:title" content="$title">
+<meta property="og:description" content="$meta_description">
+<meta property="og:url" content="https://nekerafa.dev/posts/$id.html" />
+$eq{$is_a, "blog_post"}[[<meta property="og:type" content="article">
+<meta property="og:publish_time" content="$published_date">
+$neq{$modified_date, nil}[[<meta property="og:modified_time" content="$modified_date">]]
+$each{$tags, "tag"}[[<meta property="og:tag" content="$tag">]]]]
 
 <link rel="icon" type="image/png" href="/avatar-128.png">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Noto+Color+Emoji&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Noto+Color+Emoji&family=Ubuntu:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Noto+Color+Emoji&family=Ubuntu:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</noscript>
 <link rel="stylesheet" href="/styles.css?$generate_date">
 </head>
 
@@ -41,7 +58,7 @@
 </nav>
 </header>
 
-<section class="container-fluid userful-links">
+<section class="container userful-links">
 <div>
 <a ref="me" href="https://socials.nekerafa.dev" target="_blank"><i class="fa-solid fa-link"></i> Mis redes sociales</a>
 </div>
@@ -54,7 +71,7 @@
 
 <main class="container">
 $eq{$is_a, "blog_post"}[[<h1>$title</h1>
-<h2><h2><span class='fa-solid fa-calendar-day'></span>$date</h2></h2>
+<h2><h2><span class='fa-solid fa-calendar-day'></span>$local_date</h2></h2>
 <p>$each{$tags, "tag"}[[<span class='badge rounded-pill tag'>$tag</span>]]</p>]]
 $body
 </main>
