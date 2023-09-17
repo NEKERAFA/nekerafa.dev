@@ -2,7 +2,7 @@ lfs = require 'lfs'
 sitegen = require 'sitegen'
 tools = require 'sitegen.tools'
 
-sass = tools.system_command "sass %s %s", "css"
+sass = tools.system_command "sass --style=compressed %s %s", "css"
 
 date_regex = '(%d%d%d%d)%-(%d%d)%-(%d%d)'
 name_regex = '[%w_]+'
