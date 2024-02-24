@@ -1,0 +1,17 @@
+---
+import Link from '../Link.astro'
+import { Icon } from "astro-icon/components";
+import './Button.sass';
+
+interface Props {
+	icon?: string;
+	href: string;
+}
+
+const { icon, href } = Astro.props;
+---
+
+<Link href={href} button>
+	{icon && <div class="icon"><Icon name={icon} size={40} /></div>}
+    <div class="content"><slot /></div>
+</Link>

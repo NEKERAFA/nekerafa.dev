@@ -1,0 +1,37 @@
+@use "@picocss/pico/scss/colors" as *
+
+hgroup
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    column-gap: 2em
+    margin: 1em
+
+    .image
+        display: flex
+        align-items: center
+
+        img
+            border-radius: 64px
+            border: solid 4px $green-500
+            padding: 2px
+
+    .content
+        margin-right: 4em
+
+        h1, h2
+            margin-bottom: 0.25em
+
+        h1
+            font-size: 150%
+        
+        h2
+            color: $green-500
+            font-size: 125%
+            --pico-font-weight: 400
+
+        p
+            margin: 0
+            margin-top: 0.5em
+            --pico-color: $black

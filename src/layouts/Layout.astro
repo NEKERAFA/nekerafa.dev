@@ -1,0 +1,39 @@
+---
+import Link from "../components/Link.astro";
+import { Icon } from "astro-icon/components";
+import '../styles/styles.sass'
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!--link rel="icon" type="image/svg+xml" href="/favicon.svg" /-->
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} - nekerafa.dev</title>
+	</head>
+	<body>
+		<slot />
+		<footer class="container">
+			<p>
+				The content of this web is licensed under <Link href="https://www.gnu.org/licenses/gpl-3.0.html">GNU
+				General Public License v3.0 (GPLv3)</Link>. Layout designed with <Link href="https://picocss.com/">
+				Pico CSS v2.0.3</Link>, under MIT Licensed.
+			</p>
+			<p class="centered">
+				From Galicia 💙 made with <Link href="https://astro.build"><Icon name="astro" /> Astro v4.4</Icon> |
+				Source code on <Link href="https://github.com/NEKERAFA/nekerafa.dev"><Icon name="fa6-brands:github" />
+				Github
+				</Link>
+			</p>
+		</footer>
+	</body>
+</html>

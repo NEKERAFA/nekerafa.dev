@@ -1,0 +1,61 @@
+@use "@picocss/pico/scss/pico" with ($theme-color: "green")
+@use "@picocss/pico/scss/colors" as *
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap')
+
+h1, h2, h3, h4, h5, h6
+    margin-bottom: 1em
+    --pico-font-family: Comfortaa, sans-serif
+    --pico-font-weight: 600
+    --pico-font-style: normal
+    --pico-typography-spacing-vertical: auto
+
+.emphatize
+    color: $green-500
+
+p
+    --pico-font-family: Nunito, sans-serif
+    --pico-font-weight: 400
+    --pico-font-style: normal
+    --pico-typography-spacing-vertical: auto
+
+nav ul
+    width: 100%
+    justify-content: center
+    column-gap: 1em
+
+    li
+        padding: 0
+
+main
+    > h1, > h2, > h3, > h4, > h5, > h6
+        color: $green-500
+
+article
+    details:last-child
+        margin: 0
+
+a[role="link"]
+    text-decoration-style: dotted
+
+    &:hover
+        text-decoration-style: solid
+
+a[role="button"]
+    margin-bottom: 1em
+    
+    &:last-child
+        margin-bottom: 0
+
+.container
+    p
+        margin-bottom: 1em
+
+        &:last-child
+            margin-bottom: 0
+
+.centered
+    text-align: center
+
+footer
+    margin: 2em 0

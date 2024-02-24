@@ -1,0 +1,23 @@
+---
+import './Accordion.sass'
+
+interface Props {
+	title: string;
+    date: Date;
+    end?: Date;
+}
+
+const { title, date, end } = Astro.props;
+
+let dateToStr = date.toLocaleDateString('es', {month: 'long', year: 'numeric'});
+if (dateToStr.length > 0) dateToStr = ` - ${dateToStr[0].toUpperCase()}${dateToStr.slice(1)}`;
+
+let endDateToStr = end ? end.toLocaleDateString('es', {month: 'long', year: 'numeric'}) : '';
+if (endDateToStr.length > 0) endDateToStr = ` a ${endDateToStr[0].toUpperCase()}${endDateToStr.slice(1)}`
+
+---
+
+<details>
+    <summary>{title}{dateToStr}{endDateToStr}</summary>
+    <slot />
+</details>

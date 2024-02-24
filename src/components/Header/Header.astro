@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import './Header.sass'
+import profile from '../../assets/profile.webp'
+---
+
+<hgroup>
+    <div class="image">
+        <Image src={profile} alt="Imagen de perfil" width="128" height="128" decoding="async" loading="eager" />
+    </div>
+    <div class="content">
+        <h1>Rafael Alcalde Azpiazu</h1>
+        <h2>@nekerafa</h2>
+        <p>Ingeniero Informático Full-Stack</p>
+    </div>
+</hgroup>

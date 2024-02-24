@@ -1,0 +1,10 @@
+---
+interface Props {
+    button?: boolean
+	href: string;
+}
+
+const { button, href } = Astro.props;
+---
+
+<a role={button ? "button" : "link"} href={href} target="_blank" rel="noopener"><slot /></a>

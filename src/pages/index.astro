@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header/Header.astro";
+import Button from "../components/Button/Button.astro";
+import Link from "../components/Link.astro";
+import Accordion from "../components/Accordion/Accordion.astro";
+import { Icon } from "astro-icon/components";
+import { getCollection } from 'astro:content';
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+const resume = await getCollection('resume');
+const resumeContent: AstroComponentFactory[] = [];
+for (const header of resume) {
+	const { Content } = await header.render();
+	resumeContent.push(Content);
+}
+
+const games = await getCollection('games');
+const gamesContent: { [key: string]: AstroComponentFactory } = {};
+for (const game of games) {
+	const { Content } = await game.render();
+	gamesContent[game.slug] = Content;
+}
+
+const projects = await getCollection('projects')
+const projectsContent: { [key: string]: AstroComponentFactory } = {};
+for (const project of projects) {
+	const { Content } = await project.render();
+	projectsContent[project.slug] = Content;
+}
+
+const experience = (await getCollection('experience')).sort((a, b) => (b.data.date?.getTime() || 0) - (a.data.date?.getTime() || 0));
+const experienceContent: { [key: string]: AstroComponentFactory } = {};
+for (const content of experience) {
+	const { Content } = await content.render();
+	experienceContent[content.slug] = Content;
+}
+---
+
+<Layout title="Rafael Alcalde Azpiazu">
+	<header class="container">
+		<Header />
+		<nav>
+			<ul>
+				<li>
+					<Link href="https://blog.nekerafa.dev">
+						<Icon name="mdi:blog" size={24} />
+					</Link>
+				</li>
+				<li>
+					<Link href="https://socials.nekerafa.dev">
+						<Icon name="mdi:link-variant" size={24} />
+					</Link>
+				</li>
+				<li>
+					<Link href="https://www.devuego.es/bd/fdesarrollador/rafael-alcalde-azpiazu-nekerafa">
+						<Icon name="mdi:gamepad-variant" size={24} />
+					</Link>
+				</li>
+				<li>
+					<Link href="https://nekerafa.itch.io">
+						<Icon name="fa6-brands:itch-io" size={24} />
+					</Link>
+				</li>
+				<li>
+					<Link href="https://github.com/NEKERAFA">
+						<Icon name="fa6-brands:github" size={24} />
+					</Link>
+				</li>
+				<li>
+					<Link href="https://gitlab.com/NEKERAFA">
+						<Icon name="fa6-brands:gitlab" size={24} />
+					</Link>
+				</li>
+				<li>
+					<Link href="www.linkedin.com/in/rafael-alcalde-azpiazu">
+						<Icon name="fa6-brands:linkedin-in" size={24} />
+					</Link>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+		<article>
+			{resumeContent.map((Content) => <Content />)}
+		</article>
+
+		<h2>Portfolio</h2>
+
+		<article>
+			<details open>
+				<summary>Videojuegos</summary>
+				{games.map(game => {
+					const Content = gamesContent[game.slug];
+					return (
+						<Button href={game.data.href} icon={game.data.icon}>
+							<h1>{game.data.title}</h1>
+							<Content />
+						</Button>
+					);
+				})}
+			</details>
+
+			<hr />
+
+			<details open>
+				<summary>Proyectos personales</summary>
+				{projects.map(project => {
+					const Content = projectsContent[project.slug];
+					return (
+						<Button href={project.data.href} icon={project.data.icon}>
+							<h1>{project.data.title}</h1>
+							<Content />
+						</Button>
+					);
+				})}
+			</details>
+		</article>
+
+		<h2>Experiencia laboral</h2>
+
+		{experience.map(content => {
+			const Content = experienceContent[content.slug];
+			return (
+				<article>
+					<Accordion title={content.data.title} date={content.data.date} end={content.data.end}>
+						<Content />
+					</Accordion>
+				</article>
+			);
+		})}
+
+		<h2>Contacto</h2>
+
+		<Button href="mailto:r.alcalde.azpiazu@gmail.com" icon="mdi:email-open">
+			<h1>Correo electrónico</h1>
+			<p>r.alcalde.azpiazu@gmail.com</p>
+		</Button>
+	</main>
+</Layout>
