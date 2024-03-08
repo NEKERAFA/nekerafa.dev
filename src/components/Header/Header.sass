@@ -18,15 +18,25 @@ hgroup
             padding: 2px
 
     .content
-        margin-right: 4em
-
         h1, h2
             margin-bottom: 0.25em
 
-        h1
-            font-size: 150%
+        .name
+            display: flex
+            flex-wrap: wrap
+            flex-direction: row
+            align-items: center
+            column-gap: 0.3em
+
+            h1
+                font-size: 150%
+
+            h2
+                color: $grey-500
+                font-size: 125%
+                --pico-font-weight: 500
         
-        h2
+        > h2
             color: $green-500
             font-size: 125%
             --pico-font-weight: 400

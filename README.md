@@ -6,7 +6,7 @@
 
 ## Dependencias
 
-- [Bun 1.0.29](https://bun.sh/)
+- [Bun 1.0.30](https://bun.sh/)
 - [Astro 4.4.0](https://astro.build/)
 
 ```sh
@@ -22,7 +22,6 @@ curl -fsSL https://bun.sh/install | bash
 ```
 
 ### Compilación
-
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
